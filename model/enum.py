@@ -1,8 +1,20 @@
 from enum import Enum
 
+class V_Interval(Enum):
+    """
+    Interval of bar data.
+    """
+    MINUTE = "1m"
+    FIVE_MINUTES = "5m"
+    FIFTEEN_MINUTES = "15m"
+    HOUR = "1h"
+    DAILY = "1d"
+    WEEKLY = "1w"
+    TICK = "tick"
 
 class Interval(Enum):
     """
+    CAUTIOUS: This enum class is for GoldMiner it's not exactly same with VVTR.Interval
     Interval of bar data.
     """
     MINUTE = "60s"
@@ -12,6 +24,16 @@ class Interval(Enum):
     DAILY = "1d"
     WEEKLY = "1w"
     TICK = "tick"
+
+class ExchangeMarket(Enum):
+    """
+    Exchange market.
+    """
+    Market_CSE = "CSE"
+    Market_SEHK = "SEHK"
+    Market_CFUTURE = "CFUTURE"
+    Market_SMART = "SMART"
+
 
 class Exchange(Enum):
     """
@@ -34,6 +56,31 @@ class Exchange(Enum):
 
     # Global
     SMART = "SMART"  # Smart Router for US stocks
+
+class Product(Enum):
+    """
+    Product class.
+    """
+    EQUITY = "股票"
+    OPTION = "期权"
+    FUTURES = "期货"
+    INDEX = "指数"
+    FOREX = "外汇"
+    SPOT = "现货"
+    ETF = "ETF"
+    BOND = "债券"
+    WARRANT = "权证"
+    SPREAD = "价差"
+    FUND = "基金"
+
+
+class OptionType(Enum):
+    """
+    Option type.
+    """
+    CALL = "看涨期权"
+    PUT = "看跌期权"
+
 
 class Adjust(Enum):
     NONE: int = 0 # 不复权

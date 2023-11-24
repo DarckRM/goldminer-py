@@ -1,0 +1,70 @@
+syntax = "proto3";
+package pb;
+
+message DbOptionBarCacheList {
+  repeated DbOptionBarCache option_bars = 1;
+}
+
+message DbBarDataCacheList {
+  repeated DbBarDataCache bar_datas = 1;
+}
+
+message DbOptionBarCache {
+  int32 datetime = 1;
+  float volume = 2;
+  float open_interest = 3;
+  float open_price = 4;
+  float high_price = 5;
+  float low_price = 6;
+  float close_price = 7;
+}
+
+message DbBarDataCache {
+  int32 datetime = 1;
+  float volume = 2;
+  float turnover= 3;
+  float avg_price= 4;
+  float open_interest = 5;
+  float open_price = 6;
+  float high_price = 7;
+  float low_price = 8;
+  float close_price = 9;
+}
+
+message BarDataCache {
+  string symbol = 1;
+  string exchange = 2;
+  string datetime = 3;
+  string interval = 4;
+  float volume = 5;
+  float turnover = 6;
+  float avg_price = 7;
+  float open_interest = 8;
+  float open_price = 9;
+  float high_price = 10;
+  float low_price = 11;
+  float close_price = 12;
+}
+
+message QuotesCache {
+    float bid_p = 1;
+    int32 bid_v = 2;
+    float ask_p = 3;
+    int32 ask_v = 4;
+}
+
+message TickDataCache {
+  string symbol = 1;
+  string name = 2;
+  int32 create_time = 3;
+  int32 update_time = 4;
+  float latest_price = 5;
+  float pre_close = 6;
+  repeated QuotesCache quotes = 7;
+}
+
+message ContractDataCache {
+  string symbol = 1;
+  string exchange = 2;
+  string name = 3;
+}
